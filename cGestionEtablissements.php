@@ -139,5 +139,5 @@ function estUnCp($codePostal) {
 }
 
 function estUneAE($adresseElectronique){
-    return preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ ", $adresseElectronique);
+    return preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_ -]+(\.[a-zA-Z0-9_ -]+)*\.[a-zA-Z]{2,4}$/ ", $adresseElectronique);
     }
