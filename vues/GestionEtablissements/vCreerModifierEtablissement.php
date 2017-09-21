@@ -1,28 +1,28 @@
 <?php
-use modele\dao\EtablissementDAO;
-use modele\metier\Etablissement;
+use modele\dao\GroupeDAO;
+use modele\metier\Groupe;
 use modele\dao\Bdd;
 require_once __DIR__.'/../../includes/autoload.php';
 Bdd::connecter();
 
 include("includes/_debut.inc.php");
 
-// CRÉER OU MODIFIER UN ÉTABLISSEMENT 
+// CRÉER OU MODIFIER UN GROUPE
 // S'il s'agit d'une création et qu'on ne "vient" pas de ce formulaire (on 
 // "vient" de ce formulaire uniquement s'il y avait une erreur), il faut définir 
 // les champs à vide sinon on affichera les valeurs précédemment saisies
-if ($action == 'demanderCreerEtab') {
+if ($action == 'demanderCreerGroupe') {
     $id = '';
-    $nom = '';
-    $adresseRue = '';
-    $ville = '';
-    $codePostal = '';
-    $tel = '';
-    $adresseElectronique = '';
-    $type = 0;
-    $civiliteResponsable = 'Monsieur';
-    $nomResponsable = '';
-    $prenomResponsable = '';
+    $identiteResponsable = '';
+    $adressePostale = '';
+    $nombrePersonnes = '';
+    $nomPays = '';
+    $hebergement = '';
+//    $adresseElectronique = '';
+//    $type = 0;
+//    $civiliteResponsable = 'Monsieur';
+//    $nomResponsable = '';
+//    $prenomResponsable = '';
 }
 
 // S'il s'agit d'une modification et qu'on ne "vient" pas de ce formulaire, il
