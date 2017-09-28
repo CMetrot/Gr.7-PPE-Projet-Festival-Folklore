@@ -38,6 +38,7 @@
    /* Effacement du trait inférieur (pour cela, on le met de la même couleur que
    le fond de la page) */
    border-bottom:solid 2px #DDFF88;
+   background-color:#ccf2ff;
    width:20%;
 }
 
@@ -55,7 +56,7 @@
 .menus .ongletPrem 
 { 
    /* Fond vert */
-   background-color:#CCFF50;
+   background-color:#ccf2ff;
    /* Couleur rouge */
    color:#F50033;
    margin:0px 0px 0px 0px;
@@ -65,20 +66,20 @@
 .menus .ongletPrem a 
 { 
    /* Fond vert */
-   background-color:#CCFF50;
+   background-color:#ccf2ff;
    /* Couleur rouge */
-   color:#F50033;
+   color:#000000;
    /* Pas de soulignement du lien */
    text-decoration:none;
 }
 
 /* Style de l'onglet non ouvert cas autres onglets que le 1er */
-.menus .onglet 
+.menus .onglet
 { 
    /* Fond vert */
-   background-color:#CCFF50;
+   background-color:#ccf2ff;
    /* Couleur rouge */
-   color:#F50033;
+   color:#000000;
    margin:0px 0px 0px 0px;
    /* Effacement du trait de gauche (pour cela, on le met de la même couleur que 
    le fond de l'onglet) */
@@ -89,9 +90,9 @@
 .menus .onglet a 
 { 
    /* Fond vert */
-   background-color:#CCFF50;
+   background-color:#ccf2ff;
    /* Couleur rouge */
-   color:#F50033;
+   color:#00000;
    /* Pas de soulignement du lien */
    text-decoration:none; 
 }
