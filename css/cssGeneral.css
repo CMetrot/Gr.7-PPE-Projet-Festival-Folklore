@@ -3,7 +3,9 @@
 /* Style de base pour la page (couleur fond : vert pâle, couleur texte : noir) */
 .basePage 
 {
-   background-color:#DDFF88;
+   background-image: url(images/Black_Background.jpg);
+   background-repeat: repeat;
+   background-position: 100%;
    color:black;
    font:11px Arial, Helvetica, sans-serif;
 }
