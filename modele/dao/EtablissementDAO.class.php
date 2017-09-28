@@ -104,7 +104,7 @@ class EtablissementDAO {
      * @return boolean =FALSE si l'opération échoue
      */
     public static function insert(Etablissement $objet) {
-        $requete = "INSERT INTO Etablissement VALUES (:id, :nom, :rue, :cdp, :ville, :tel, :email, :type, :civ, :nomResp, :prenomResp)";
+        $requete = "INSERT INTO Etablissement VALUES (:id, :nom, :rue, :cdp, :ville, :tel, :email, :type, :civ, UCASE(:nomResp), :prenomResp)";
         $stmt = Bdd::getPdo()->prepare($requete);
         self::metierVersEnreg($objet, $stmt);
         $ok = $stmt->execute();
