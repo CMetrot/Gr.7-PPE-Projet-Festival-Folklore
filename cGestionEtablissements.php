@@ -115,6 +115,10 @@ function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel,
     if ($adresseElectronique != "" && !estUneAE($adresseElectronique)) {
         ajouterErreur('Veuillez saisir une adresse mail au format 123abc@456def.aaa ou 123abc@456def.aa');
     }
+    if ($nom != "" && !caracAlpha($nom)) {
+        ajouterErreur('Seul les caractères alphabétiques et numériques sont acceptés');
+    }
+    
 }
 
 function verifierDonneesEtabM($id, $nom, $adresseRue, $codePostal, $ville, $tel, $nomResponsable, $adresseElectronique) {
@@ -131,6 +135,9 @@ function verifierDonneesEtabM($id, $nom, $adresseRue, $codePostal, $ville, $tel,
     if ($adresseElectronique != "" && !estUneAE($adresseElectronique)) {
         ajouterErreur('Veuillez saisir une adresse mail au format 123abc@456def.aaa ou 123abc@456def.aa');
     }
+    if ($nom != "" && !caracAlpha($nom)) {
+        ajouterErreur('Seul les caractères alphabétiques et numériques sont acceptés');
+    }
 }
 
 function estUnCp($codePostal) {
@@ -140,4 +147,8 @@ function estUnCp($codePostal) {
 
 function estUneAE($adresseElectronique){
     return preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_ -]+(\.[a-zA-Z0-9_ -]+)*\.[a-zA-Z]{2,4}$/ ", $adresseElectronique);
+    }
+    
+function caracAlpha($nom){
+    return preg_match ( "/^[a-z0-9]+([\\s]{1}[a-z0-9]|[a-z0-9])+$/i", $nom);
     }
