@@ -3,8 +3,8 @@
 /* Style de base pour la page (couleur fond : vert pâle, couleur texte : noir) */
 .basePage 
 {
-   background-image: url("images/background.jpg");
-   background-size: 150%;
+   background-image: url(../images/background.jpg);
+   background-size: 100%;
    background-position: 100%;
    color:black;
    font:11px Arial, Helvetica, sans-serif;

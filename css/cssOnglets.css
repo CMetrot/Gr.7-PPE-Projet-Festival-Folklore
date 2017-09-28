@@ -28,7 +28,7 @@
    certains navigateurs n'acceptent pas les nombres réels donc on met
    un nombre entier) mais pour l'onglet actif, on passe à 20% (voir styles 
    ongletOuvertPrem et ongletOuvert) */
-   width:18%;
+   width:19.60%;
    height:5%;
 }
 
@@ -38,7 +38,7 @@
    /* Effacement du trait inférieur (pour cela, on le met de la même couleur que
    le fond de la page) */
    border-bottom:solid 2px #DDFF88;
-   background-color:#ccf2ff;
+   background-color:#DDFF88;
    width:20%;
 }
 
