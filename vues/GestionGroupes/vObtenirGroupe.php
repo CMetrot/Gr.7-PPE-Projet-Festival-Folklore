@@ -30,11 +30,11 @@ foreach ($lesGroupes as $unGroupe) {
          
          <td width='16%' align='center'> 
          <a href='cGestionGroupes.php?action=detailGroupes&id=$id'>
-         Voir détail</a></td>
+         </a></td>
          
          <td width='16%' align='center'> 
          <a href='cGestionGroupes.php?action=demanderModifierGroupes&id=$id'>
-         Modifier</a></td>";
+         </a></td>";
 
     // S'il existe déjà des attributions pour le groupe, il faudra
     // d'abord les supprimer avant de pouvoir supprimer l'établissement
@@ -44,7 +44,7 @@ foreach ($lesGroupes as $unGroupe) {
         echo "
             <td width='16%' align='center'> 
             <a href='cGestionGroupes.php?action=demanderSupprimerGroupe&id=$id'>
-            Supprimer</a></td>";
+            </a></td>";
     } else {
         echo "
             <td width='16%'>&nbsp; </td>";
@@ -56,6 +56,6 @@ echo "
 </table>
 <br>
 <a href='cGestionGroupes.php?action=demanderCreerGroupe'>
-Création d'un groupe</a >";
+</a >";
 
 include("includes/_fin.inc.php");
