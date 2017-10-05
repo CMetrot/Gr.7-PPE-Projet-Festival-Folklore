@@ -55,7 +55,7 @@ foreach ($lesGroupes as $unGroupe) {
 echo "
 </table>
 <br>
-<a href='cGestionGroupess.php?action=demanderCreerGroupe'>
+<a href='cGestionGroupes.php?action=demanderCreerGroupe'>
 Création d'un groupe</a >";
 
 include("includes/_fin.inc.php");
