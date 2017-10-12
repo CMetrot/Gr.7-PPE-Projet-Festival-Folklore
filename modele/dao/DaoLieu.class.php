@@ -49,7 +49,7 @@ class DaoLieu {
      */
     public static function getOneById($id) {
         $objetConstruit = null;
-        $requete = "SELECT * FROM Lieu WHERE idl = :id";
+        $requete = "SELECT * FROM Lieu WHERE id = :id";
         $stmt = Bdd::getPdo()->prepare($requete);
         $stmt->bindParam(':id', $id);
         $ok = $stmt->execute();
