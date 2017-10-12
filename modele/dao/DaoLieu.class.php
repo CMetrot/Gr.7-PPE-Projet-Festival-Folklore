@@ -1,44 +1,35 @@
 <?php
 namespace modele\dao;
 
-use modele\metier\Groupe;
+
+use modele\metier\Lieu;
 use \PDO;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
- * Description of GroupeDAO
- * Classe métier :  Groupe
- * @author prof
- * @version 2017
+ * Description of DaoLieu
+ *
+ * @author aroblin
  */
-class GroupeDAO {
-
-
-    /**
-     * Instancier un objet de la classe Groupe à partir d'un enregistrement de la table GROUPE
-     * @param array $enreg
-     * @return Groupe
-     */
+class DaoLieu {
     protected static function enregVersMetier(array $enreg) {
         $id = $enreg['ID'];
         $nom = $enreg['NOM'];
-        $identite = $enreg['IDENTITERESPONSABLE'];
-        $adresse = $enreg['ADRESSEPOSTALE'];
-        $nbPers = $enreg['NOMBREPERSONNES'];
-        $nomPays = $enreg['NOMPAYS'];
-        $hebergement = $enreg['HEBERGEMENT'];
-        $unGroupe = new Groupe($id, $nom, $identite, $adresse, $nbPers, $nomPays, $hebergement);
+        $capacite = $enreg['CAPACITE'];
+        $adr = $enreg['ADR'];
+        $unLieu = new Lieu($id, $nom, $adr, $capacite);
 
-        return $unGroupe;
+        return $unLieu;
     }
 
 
-    /**
-     * Retourne la liste de tous les groupes
-     * @return array tableau d'objets de type Groupe
-     */
     public static function getAll() {
         $lesObjets = array();
-        $requete = "SELECT * FROM Groupe";
+        $requete = "SELECT * FROM Lieu";
         $stmt = Bdd::getPdo()->prepare($requete);
         $ok = $stmt->execute();
         if ($ok) {
@@ -58,7 +49,7 @@ class GroupeDAO {
      */
     public static function getOneById($id) {
         $objetConstruit = null;
-        $requete = "SELECT * FROM Groupe WHERE ID = :id";
+        $requete = "SELECT * FROM Lieu WHERE idl = :id";
         $stmt = Bdd::getPdo()->prepare($requete);
         $stmt->bindParam(':id', $id);
         $ok = $stmt->execute();
@@ -75,46 +66,30 @@ class GroupeDAO {
      * @param string $idEtab
      * @return array tableau d'éléments de type Groupe
      */
-    public static function getAllByEtablissement($idEtab) {
-        $lesGroupes = array();  // le tableau à retourner
-        $requete = "SELECT * FROM Groupe
-                    WHERE ID IN (
-                    SELECT DISTINCT ID FROM Groupe g
-                            INNER JOIN Attribution a ON a.IDGROUPE = g.ID 
+    public static function getAllByLieu($idLieu) {
+        $lesLieux = array();  // le tableau à retourner
+        $requete = "SELECT * FROM Lieu
+                    WHERE id IN (
+                    SELECT DISTINCT id FROM Lieu i
+                            INNER JOIN Attribution a ON a.IDGROUPE = i.id 
                             WHERE IDETAB=:id
                     )";
         $stmt = Bdd::getPdo()->prepare($requete);
-        $stmt->bindParam(':id', $idEtab);
+        $stmt->bindParam(':id', $idLieu);
         $ok = $stmt->execute();
         if ($ok) {
             // Tant qu'il y a des enregistrements dans la table
             while ($enreg = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 //ajoute un nouveau groupe au tableau
-                $lesGroupes[] = self::enregVersMetier($enreg);
+                $lesLieux[] = self::enregVersMetier($enreg);
             }
         } 
-        return $lesGroupes;
+        return $lesLieux;
     }
 
     
     /**
      * Retourne la liste des groupes souhaitant un hébergement, ordonnée par id
      * @return array tableau d'éléments de type Groupe
-     */
-    public static function getAllToHost() {
-        $lesGroupes = array();
-        $requete = "SELECT * FROM Groupe WHERE HEBERGEMENT='O' ORDER BY ID";
-        $stmt = Bdd::getPdo()->prepare($requete);
-        $ok = $stmt->execute();
-        if ($ok) {
-            while ($enreg = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $lesGroupes[] = self::enregVersMetier($enreg);
-            }
-        }
-        return $lesGroupes;
-    }
-
-
-    
-    
+     */    
 }
