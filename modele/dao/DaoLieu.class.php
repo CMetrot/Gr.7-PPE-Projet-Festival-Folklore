@@ -3,14 +3,12 @@ namespace modele\dao;
 
 
 use modele\metier\Lieu;
-use PDO;
+use \PDO;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-namespace modele\dao;
 
 /**
  * Description of DaoLieu
@@ -19,10 +17,10 @@ namespace modele\dao;
  */
 class DaoLieu {
     protected static function enregVersMetier(array $enreg) {
-        $id = $enreg['id'];
-        $nom = $enreg['nom'];
-        $capacite = $enreg['capacite'];
-        $adr = $enreg['adr'];
+        $id = $enreg['ID'];
+        $nom = $enreg['NOM'];
+        $capacite = $enreg['CAPACITE'];
+        $adr = $enreg['ADR'];
         $unLieu = new Lieu($id, $nom, $adr, $capacite);
 
         return $unLieu;
@@ -93,21 +91,5 @@ class DaoLieu {
     /**
      * Retourne la liste des groupes souhaitant un hébergement, ordonnée par id
      * @return array tableau d'éléments de type Groupe
-     */
-    public static function getAllToHost() {
-        $lesLieux = array();
-        $requete = "SELECT * FROM Lieu WHERE HEBERGEMENT='O' ORDER BY id";
-        $stmt = Bdd::getPdo()->prepare($requete);
-        $ok = $stmt->execute();
-        if ($ok) {
-            while ($enreg = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $lesLieux[] = self::enregVersMetier($enreg);
-            }
-        }
-        return $lesLieux;
-    }
-
-
-    
-    
+     */    
 }
