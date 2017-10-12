@@ -2,7 +2,7 @@
 namespace modele\dao;
 
 use modele\metier\Groupe;
-use PDO;
+use \PDO;
 
 /**
  * Description of GroupeDAO
