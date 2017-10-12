@@ -1,6 +1,6 @@
 <?php
 /**
- * Contrôleur : gestion des établissements
+ * Contrôleur : gestion des groupes
  */
 use modele\dao\GroupeDAO;
 use modele\metier\Groupe;
@@ -26,7 +26,7 @@ switch ($action) {
         include("vues/GestionGroupes/vObtenirGroupe.php");
         break;
 
-    case 'detailGroupes':
+    /*case 'detailGroupes':
         $id = $_REQUEST['id'];
         include("vues/GestionGroupes/vObtenirGroupe.php");
         break;
@@ -42,7 +42,7 @@ switch ($action) {
         include("vues/GestionGroupes/vObtenirGroupe.php");
         break;
 
-    /*case 'validerSupprimerEtab':
+    case 'validerSupprimerEtab':
         $id = $_REQUEST['id'];
         EtablissementDAO::delete($id);
         include("vues/GestionEtablissements/vObtenirEtablissements.php");
@@ -86,7 +86,7 @@ switch ($action) {
 // Fermeture de la connexion au serveur MySql
 Bdd::deconnecter();
 
-function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel, $nomResponsable, $adresseElectronique) {
+/*function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel, $nomResponsable, $adresseElectronique) {
     if ($id == "" || $nom == "" || $adresseRue == "" || $codePostal == "" ||
             $ville == "" || $tel == "" || $nomResponsable == "") {
         ajouterErreur('Chaque champ suivi du caractère * est obligatoire');
@@ -148,4 +148,4 @@ function estUneAE($adresseElectronique){
     
 function caracAlpha($nom){
     return preg_match ( "/^[a-z0-9]+([\\s]{1}[a-z0-9]|[a-z0-9])+$/i", $nom);
-    }
+    }*/
