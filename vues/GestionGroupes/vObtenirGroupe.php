@@ -29,4 +29,5 @@ foreach ($lesGroupes as $unGroupe) {
          <td width='52%'>$nom</td>";
 }
          
+
 include("includes/_fin.inc.php");
