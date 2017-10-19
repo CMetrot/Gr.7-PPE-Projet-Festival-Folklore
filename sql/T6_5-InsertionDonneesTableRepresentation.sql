@@ -9,7 +9,7 @@
  */
 
 /*Exécuter d'abord la première requète*/
-INSERT INTO Representation (id_lieu, id_groupe, date_rep, heure_deb, heure_fin)
+INSERT INTO Representation (id_rep, id_lieu, id_groupe, date_rep, heure_deb, heure_fin)
 VALUES
 (1, 1, 'g012', '2017-11-07', '20:30:00', '21:45:00');
 /*Exécuter le reste des requètes*/

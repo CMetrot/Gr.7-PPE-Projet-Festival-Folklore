@@ -9,5 +9,5 @@
  */
 
 ALTER TABLE Representation
-ADD CONSTRAINT fk_representation_lieu FOREIGN KEY(id_lieu) REFERENCES (id)
-ADD CONSTRAINT fk_representation_groupe FOREIGN KEY(id_groupe) REFERENCES (id);
+ADD CONSTRAINT fk_representation_lieu FOREIGN KEY(id_lieu) REFERENCES Lieu(id),
+ADD CONSTRAINT fk_representation_groupe FOREIGN KEY(id_groupe) REFERENCES Groupe(id);
