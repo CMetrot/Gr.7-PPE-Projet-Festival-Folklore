@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Contrôleur : gestion des offres d'hébergement
  */
