@@ -26,36 +26,7 @@ foreach ($lesGroupes as $unGroupe) {
     $nom = $unGroupe->getNom();
     echo "
 		<tr class='ligneTabNonQuad'>
-         <td width='52%'>$nom</td>
-         
-         <td width='16%' align='center'> 
-         <a href='cGestionGroupes.php?action=detailGroupes&id=$id'>
-         </a></td>
-         
-         <td width='16%' align='center'> 
-         <a href='cGestionGroupes.php?action=demanderModifierGroupes&id=$id'>
-         </a></td>";
-
-    // S'il existe déjà des attributions pour le groupe, il faudra
-    // d'abord les supprimer avant de pouvoir supprimer l'établissement
-//    if (!existeAttributionsEtab($connexion, $id)) {
-    $lesAttributionsDeCeGroupe = AttributionDAO::getAllByIdGroupe($id);
-    if (count($lesAttributionsDeCeGroupe)==0) {
-        echo "
-            <td width='16%' align='center'> 
-            <a href='cGestionGroupes.php?action=demanderSupprimerGroupe&id=$id'>
-            </a></td>";
-    } else {
-        echo "
-            <td width='16%'>&nbsp; </td>";
-    }
-    echo "
-      </tr>";
+         <td width='52%'>$nom</td>";
 }
-echo "
-</table>
-<br>
-<a href='cGestionGroupes.php?action=demanderCreerGroupe'>
-</a >";
 
 include("includes/_fin.inc.php");
