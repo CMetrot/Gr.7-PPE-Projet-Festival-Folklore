@@ -28,5 +28,6 @@ foreach ($lesGroupes as $unGroupe) {
 		<tr class='ligneTabNonQuad'>
          <td width='52%'>$nom</td>";
 }
+         
 
 include("includes/_fin.inc.php");
