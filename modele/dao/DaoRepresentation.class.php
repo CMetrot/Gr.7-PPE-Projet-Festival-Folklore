@@ -12,7 +12,7 @@ use PDO;
  * @author prof
  * @version 2017
  */
-class EtablissementDAO {
+class DaoRepresentation {
 
     /**
      * Instancier un objet de la classe Etablissement à partir d'un enregistrement de la table ETABLISSEMENT
@@ -20,21 +20,16 @@ class EtablissementDAO {
      * @return Etablissement
      */
      protected static function enregVersMetier(array $enreg) {
-        $id = $enreg['ID'];
-        $nom = $enreg['NOM'];
-        $adresse = $enreg[strtoupper('adresseRue')];
-        $cdp = $enreg[strtoupper('codePostal')];
-        $ville = $enreg[strtoupper('ville')];
-        $tel = $enreg[strtoupper('tel')];
-        $email = $enreg[strtoupper('adresseElectronique')];
-        $type = $enreg[strtoupper('type')];
-        $civResp = $enreg[strtoupper('civiliteResponsable')];
-        $nomResp = $enreg[strtoupper('nomResponsable')];
-        $prenomResp = $enreg[strtoupper('prenomResponsable')];
+        $idRep = $enreg['ID'];
+        $idLieu = $enreg['NOM'];
+        $idGroupe = $enreg[strtoupper('adresseRue')];
+        $dateRep = $enreg[strtoupper('codePostal')];
+        $heureDeb = $enreg[strtoupper('ville')];
+        $heureFin = $enreg[strtoupper('tel')];
 
-        $unEtab = new Etablissement($id, $nom, $adresse, $cdp, $ville, $tel, $email, $type, $civResp, $nomResp, $prenomResp);
+        $uneRep = new Representation($idRep, $idLieu, $idGroupe, $dateRep, $heureDeb, $heureFin);
 
-        return $unEtab;
+        return $uneRep;
     }
 
     /**
