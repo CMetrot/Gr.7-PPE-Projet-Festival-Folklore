@@ -2,7 +2,7 @@
 
 namespace modele\dao;
 
-use modele\metier\Représentation;
+use modele\metier\Representation;
 use modele\metier\Lieu;
 use modele\metier\Groupe;
 use \PDO;
