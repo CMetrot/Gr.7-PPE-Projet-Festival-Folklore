@@ -17,12 +17,12 @@ class Representation {
      * groupe en représentation
      * @var Lieu
      */
-    private $idLieu;
+    private $lieu;
     /**
      * groupe en représentation
      * @var Groupe
      */
-    private $idGroupe;
+    private $groupe;
     /**
      * groupe en représentation
      * @var date
@@ -41,8 +41,8 @@ class Representation {
     
     function __construct ($idRep, Lieu $unLieu, Groupe $unGroupe, $dateRep, $heureDeb, $heureFin){
         $this->idRep = $idRep;
-        $this->idLieu = $unLieu;
-        $this->idGroupe = $unGroupe;
+        $this->lieu = $unLieu;
+        $this->groupe = $unGroupe;
         $this->dateRep = $dateRep;
         $this->heureDeb = $heureDeb;
         $this->heureFin = $heureFin;
@@ -52,12 +52,12 @@ class Representation {
         return $this->idRep;
     }
 
-    function getIdLieu() {
-        return $this->idLieu;
+    function getLieu() {
+        return $this->lieu;
     }
 
-    function getIdGroupe() {
-        return $this->idGroupe;
+    function getGroupe() {
+        return $this->groupe;
     }
 
     function getDateRep() {
@@ -76,12 +76,12 @@ class Representation {
         $this->idRep = $idRep;
     }
 
-    function setIdLieu($idLieu) {
-        $this->idLieu = $idLieu;
+    function setLieu($lieu) {
+        $this->lieu = $lieu;
     }
 
-    function setIdGroupe($idGroupe) {
-        $this->idGroupe = $idGroupe;
+    function setIdGroupe($groupe) {
+        $this->groupe = $groupe;
     }
 
     function setDateRep($dateRep) {
