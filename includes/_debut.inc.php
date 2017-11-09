@@ -34,6 +34,7 @@
                             <?php construireMenu("Offre hébergement", "cOffreHebergement.php", 4); ?>
                             <?php construireMenu("Attribution chambres", "cAttributionChambres.php", 5); ?>
                             <?php construireMenu("Gestion groupes", "cGestionGroupes.php", 6); ?>
+                            <?php construireMenu("Gestion représentations", "cGestionRepresentations.php", 7); ?>
                         </ul>
                     </div>
 
