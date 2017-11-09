@@ -11,6 +11,7 @@
 
         use modele\dao\DaoLieu;
         use modele\dao\Bdd;
+        use modele\metier\Lieu;
 
 require_once __DIR__ . '/../includes/autoload.php';
 
