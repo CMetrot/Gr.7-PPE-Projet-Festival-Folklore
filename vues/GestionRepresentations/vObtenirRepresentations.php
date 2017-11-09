@@ -6,25 +6,59 @@ require_once __DIR__.'/../../includes/autoload.php';
 
 include("includes/_debut.inc.php");
 
-echo "
-    <br>
-    <table width='55%' cellspacing='0' cellpadding='0' class='tabNonQuadrille'>
-    <tr class='enTeteTabQuad'>
-        <td colspan='4' width='35%'>Lieu</td>
-        <td colspan='4' width='35%'>Groupe</td>
-        <td colspan='4' width='10%'>Heure début</td>
-        <td colspan='4' width='10%'>Heure fin</td>
-    </tr>";
-
-
-
+echo "<h1 align='center'>Programme par jours</h1>";
 $lesRepresentations = DaoRepresentation::getAll();
-// BOUCLE SUR LES REPRESENTATIONS
-foreach ($lesRepresentations as $uneRepresentation) {
-    $id = $uneRepresentation->getLieu()->getId();
-    $nom = $uneRepresentation->getGroupe()->getId();
-echo "
-    <tr class='ligneTabNonQuad'>
-         <td colspan='4' width='35%'></td>";
+$dateprec = -1;
+$x = -1;
 
+foreach ($lesRepresentations as $uneRepresentation) {
+    $dateRep = $uneRepresentation->getDateRep();
+
+    if($x==-1){
+        $dateprec=$dateRep;
+        $x=$x+1;
+  
+        echo "<strong>$dateRep</strong><br>
+        <table width='55%' cellspacing='0' cellpadding='1' class='tabNonQuadrille'>";
+        
+        echo "
+        <tr class='enTeteTabQuad'>
+            <td colspan='5' width='35%'>Lieu</td>
+            <td colspan='5' width='35%'>Groupe</td>
+            <td colspan='5' width='10%'>Heure début</td>
+            <td colspan='5' width='10%'>Heure fin</td>
+            <td colspan='5' width='15%'></a></td>
+            <td colspan='5' width='15%'></a></td>
+        </tr>";
+        }
+
+        If($dateprec!=$dateRep){
+            $dateprec=$dateRep;
+            echo"</table><br>";
+            echo"<strong>$dateRep</strong><br>
+                <table width='55%' cellspacing='0' cellpadding='1' class='tabNonQuadrille'>";
+            echo"
+            <tr class='enTeteTabQuad'>
+            <td colspan='5' width='35%'>Lieu</td>
+            <td colspan='5' width='35%'>Groupe</td>
+            <td colspan='5' width='10%'>Heure début</td>
+            <td colspan='5' width='10%'>Heure fin</td>
+            <td colspan='5' width='15%'></a></td>
+            <td colspan='5' width='15%'></a></td>
+        </tr>";
+        }
+        
+    $lieu = $uneRepresentation->getLieu()->getNom();
+    $groupe = $uneRepresentation->getGroupe()->getNom();
+    $heureDeb = $uneRepresentation->getHeureDeb();
+    $heureFin = $uneRepresentation->getHeureFin();
+echo "
+    <tr class='ligneTabNonQuadrille'>
+        <td colspan='5' width='35%'>$lieu</td>
+        <td colspan='5' width='35%'>$groupe</td>
+        <td colspan='5' width='10%'align='center'>$heureDeb</td>
+        <td colspan='5' width='10%'align='center'>$heureFin</td>
+        <td colspan='5' width='15%' align='center'><a href='#'>Supprimer</a></td>
+        <td colspan='5' width='15%' align='center'><a href='#'>Modifier</a></td>
+    </tr>";
 }

@@ -59,7 +59,7 @@ class DaoRepresentation {
      */
     public static function getAll() {
         $lesObjets = array();
-        $requete = "SELECT * FROM Representation";
+        $requete = "SELECT * FROM Representation ORDER BY date_rep";
         $stmt = Bdd::getPdo()->prepare($requete);
         $ok = $stmt->execute();
         if ($ok) {
