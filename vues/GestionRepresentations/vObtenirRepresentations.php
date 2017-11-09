@@ -19,7 +19,7 @@ foreach ($lesRepresentations as $uneRepresentation) {
         $x=$x+1;
   
         echo "<strong>$dateRep</strong><br>
-        <table width='55%' cellspacing='0' cellpadding='1' class='tabNonQuadrille'>";
+        <table width='55%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
         
         echo "
         <tr class='enTeteTabQuad'>
@@ -36,7 +36,7 @@ foreach ($lesRepresentations as $uneRepresentation) {
             $dateprec=$dateRep;
             echo"</table><br>";
             echo"<strong>$dateRep</strong><br>
-                <table width='55%' cellspacing='0' cellpadding='1' class='tabNonQuadrille'>";
+                <table width='55%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
             echo"
             <tr class='enTeteTabQuad'>
             <td colspan='5' width='35%'>Lieu</td>
@@ -53,12 +53,12 @@ foreach ($lesRepresentations as $uneRepresentation) {
     $heureDeb = $uneRepresentation->getHeureDeb();
     $heureFin = $uneRepresentation->getHeureFin();
 echo "
-    <tr class='ligneTabNonQuadrille'>
+    <tr class='ligneTabQuadrille'>
         <td colspan='5' width='35%'>$lieu</td>
         <td colspan='5' width='35%'>$groupe</td>
         <td colspan='5' width='10%'align='center'>$heureDeb</td>
         <td colspan='5' width='10%'align='center'>$heureFin</td>
-        <td colspan='5' width='15%' align='center'><a href='#'>Supprimer</a></td>
         <td colspan='5' width='15%' align='center'><a href='#'>Modifier</a></td>
+        <td colspan='5' width='15%' align='center'><a href='#'>Supprimer</a></td>
     </tr>";
 }
