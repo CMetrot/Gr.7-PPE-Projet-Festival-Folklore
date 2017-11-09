@@ -33,4 +33,3 @@ switch ($action) {
 
 // Fermeture de la connexion au serveur MySql
 Bdd::deconnecter();
-
