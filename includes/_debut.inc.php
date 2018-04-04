@@ -8,7 +8,7 @@
         <link href="css/cssOnglets.css" rel="stylesheet" type="text/css">
     </head>
     <body class='basePage'>
-        <div style="text-align:right;">SCAB (Steven_Judais | Corentin_Métrot | Alan_Roblin | Benjamin_LeMaoult)</div>
+        <div style="text-align:right;">SCAB (Steeven_Judais | Corentin_Métrot | Alan_Roblin | Benjamin_LeMaoult)</div>
         <!--  Tableau contenant le titre et les menus -->
         <table width="100%" cellpadding="0" cellspacing="0">
             <!-- Titre -->
